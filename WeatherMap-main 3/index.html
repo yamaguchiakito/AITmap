@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>愛工大キャンパス案内</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="description" content="愛知工業大学の校内を検索できるWebサイトです。">
+		<meta name="keywords" content="AIT,愛知工業大学,評議,愛工大,教室検索,geco">
+        <!--CSS-->
+        <link rel="stylesheet" href="./stylesheet.css">
+        <!--Script-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaBFzNFrqUTEgvsnlDByKwfAfsfE6JWgU&v=beta&callback=weatherRouteMap"></script>
+        <script src="./scripts/RouteMap.js"></script>
+        <script src="./scripts/selectBox.js"></script>
+        <script src="./scripts/roomCheck.js"></script>
+        <script src="./scripts/weatherIcon.js"></script>
+        <script>
+            geolocation();
+
+            window.onload = function() {
+                createSelectBox();
+                weatherIcon();
+                //初期表示は非表示
+                document.getElementById("timeVisi").style.display ="none";
+                document.getElementById("map").style.display ="none";
+            }
+        </script>
+    </head>
+
+  <body ng-controller="MyController">
+      <!--ヘッダー-->
+      <header>
+          <h1>愛工大キャンパス案内</h1>
+          <p>天気によって移動時間が変化します</p>
+      </header>
+
+      <!--教室名から検索-->
+      <div class="openclassroom">
+          <span class="classroomshow">
+              <!-- 目的地検索 -->
+              <input type="text" name="number" id="searchbox"　value="" placeholder="教室を入力">
+              <input type="button" id=searchbutton value="検索" onclick="check(searchbox.value)">
+              <p><output id="guest"></output></p>
+          </span>
+      </div>
+
+      <!--検索機能-->
+      <main>
+          <!--現在地から検索-->
+          <td>
+              <tr>
+                  <!-- 出発点 -->
+                  <select id="startpoint" class="point" onchange="weatherRouteMap()"></select>
+                  <a id="yazirushi">↓</a>
+                  <!-- 目的地 -->
+                  <select id="goalpoint" class="point" onchange="weatherRouteMap()"></select>
+              </tr>
+          </td>
+
+          <!--結果表示-->
+          <td>
+              <div class="container"></div>
+              <tr>
+                  <!-- <p id="timeVisi" class="TIME">所要時間：<span id="time"></span></p> -->
+              </tr>
+          </td>
+      </main>
+
+      <!--天気表示-->
+      <img ng-src="{{weather}}">
+      <script>weatherIcon();</script>
+      <div id="map"></div>
+  </body>
+</html>

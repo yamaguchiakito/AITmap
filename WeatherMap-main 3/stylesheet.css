@@ -1,0 +1,162 @@
+/* ------スマホ用------ */
+@media screen and (max-width: 750px) {
+  html {
+    height:100%;
+    padding:0;
+    font-size: 50px;
+    margin: auto;
+  }
+  body {
+    height:90%;
+    padding:0;
+    font-size: 20px;
+    margin: 30px 5% 0px 5%;
+    text-align: center;
+  }
+  header {
+    margin: 20px 0px;    
+  }
+  h1 {
+    margin: 0px;
+    text-align: center;
+  }
+  h4 {
+    margin: 0px;
+    text-align: center;
+  }
+  a {
+    font-size: 30px;
+    margin: 0px;
+  }
+  p {
+    font-size: 20px;
+    margin: 0px;
+  }
+  img {
+    width: 80px; 
+    height: 80px; 
+  }
+  select {
+    margin: 5px 0px;
+    width: 90%;
+    font-size: 150%;
+    position: relative;
+    text-align: center;
+  }
+  .TIME {
+    font-size: 40px;
+  }
+  #yazirushi {
+    width: 5%;
+    margin: 0px;
+    position: absolute;
+    top: 170px;
+  }
+  #map {
+    position: relative;
+    height:40%;
+    background-color: grey;
+  }
+  label {
+    margin: 5px;
+    font-size: 30px;
+  }
+}
+
+/* ------PC用------ */
+@media screen and (min-width: 751px) {
+  #map {
+    height:70%;
+  }
+  html {
+    height:100%;
+    padding:0;
+    font-size: 20px;
+    margin: auto;
+  }
+  body {
+    height:90%;
+    padding:0;
+    font-size: 20px;
+    margin: 30px 20% 0px 20%;
+    background-color: white;
+  }
+  a {
+    font-size: 30px;
+    margin: 0px;
+  }
+  p {
+    font-size: 30px;
+    margin: 0px;
+  }
+  img {
+    width: 100px; 
+    height: 100px; 
+  }
+  select {
+    font-size: 150%;
+  }
+  input {
+    font-size: 20px;
+  }
+  .point {
+    width: 100%;
+  }
+  .TIME {
+    font-size: 40px;
+  }
+}
+
+/* ------便利システム------ */
+#pushlabelEx {
+  display: none; /* チェックボックスを隠す */
+}
+.openEx .exshow {
+  height: 0;
+  opacity: 0; /* 折り畳んだ時に中を透明にする */
+  display: none;/* 閉じた時に中身の要素をなくす */
+}
+.inputcss:checked + .exshow {
+  height: auto;
+  opacity: 1; /*クリックやタップで中を表示させる*/
+  display: block;/* 折り畳みになるように */
+}
+.openEx {
+  font-size: 20px;
+}
+
+
+#pushimg {
+  display: none; /* チェックボックスを隠す */
+}
+.openselectweather .selectweathershow {
+  height: 0;
+  opacity: 0; /* 折り畳んだ時に中を透明にする */
+  display: none;/* 閉じた時に中身の要素をなくす */
+}
+.inputcss:checked + .selectweathershow {
+  height: auto;
+  opacity: 1; /*クリックやタップで中を表示させる*/
+  display: block;/* 折り畳みになるように */
+}
+.openselectweather {
+  font-size: 20px;
+}
+
+
+#pushlabel {
+  display: none; /* チェックボックスを隠す */
+}
+.openclassroom .classroomshow {
+  height: 0;
+  opacity: 0; /* 折り畳んだ時に中を透明にする */
+  display: none;/* 閉じた時に中身の要素をなくす */
+}
+.inputcss:checked + .classroomshow {
+  height: auto;
+  opacity: 1; /*クリックやタップで中を表示させる*/
+  display: block;/* 折り畳みになるように */
+}
+.openclassroom {
+  font-size: 20px;
+}
